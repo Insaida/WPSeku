@@ -1,6 +1,6 @@
 ![python](https://img.shields.io/badge/python-2.7-brightgreen.svg) ![license](https://img.shields.io/badge/license-GPL-brightgreen.svg)
 # WPSeku v0.2.1 - Wordpress Security Scanner 
-WPSeku is a black box WordPress vulnerability scanner that can be used to scan remote WordPress installations to find security issues.
+WPSeku is a black box WordPress vulnerability scanner that can be used to scan remote WordPress installations and test for common security issues.
 
 ## Installation
 ```
