@@ -19,6 +19,16 @@ WPSeku is a black box WordPress vulnerability scanner that can be used to scan r
 ![screen3](http://i.imgur.com/gGhmGdz.png)
 ![screen4](http://i.imgur.com/bBj8QdN.png)
 
+## Examples
+```
+# wpseku.py --target http://localhost
+# wpseku.py -t http://localhost/wp-admin/post.php -m GET -q "post=49&action=edit" [-x,-s,-l]
+# wpseku.py --target http://localhost --brute --wordlist dict.txt
+# wpseku.py --target http://localhost --brute --user test --wordlist dict.txt
+```
+
+
+
 ## License
 WPSeku is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation version 3 of the License. WPSeku is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with WPSeku; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.
 
