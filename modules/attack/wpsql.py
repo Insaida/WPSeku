@@ -81,7 +81,7 @@ class wpsql:
 					if data != "":
 						self.printf.erro("[%s][%s][%s] %s"%(resp.getcode(),self.method,data,resp.geturl()))
 					else:
-						self.printf.plus("[%s][%s][not vuln] %s"%(resp.getcode(),self.method,resp.geturl()))
+						self.printf.plus("[%s][%s][not vulnerable] %s"%(resp.getcode(),self.method,resp.geturl()))
 					param[item[0]] = item[1].replace(x[0],item[1])
 		except Exception as error:
 			pass

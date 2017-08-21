@@ -102,7 +102,7 @@ class WPSeku(object):
 		netloc = urlparse.urlsplit(url).netloc
 		path = urlparse.urlsplit(url).path
 		if scheme not in ['http','https','']:
-			sys.exit(self.printf.erro('Schme %s not supported'%(scheme)))
+			sys.exit(self.printf.erro('Scheme %s not supported'%(scheme)))
 		if netloc == "":
 			return "http://"+path
 		else:
@@ -156,25 +156,25 @@ class WPSeku(object):
 		if not self.user:self.user="admin"
 		# xss attack
 		if self.xss==True:
-			if not self.method:sys.exit(self.printf.erro('Method not exisits!'))
-			if not self.query:sys.exit(self.printf.erro('Not found query'))
+			if not self.method:sys.exit(self.printf.erro('Method does not exist!'))
+			if not self.query:sys.exit(self.printf.erro('Query not found'))
 			wpxss.wpxss(self.agent,self.proxy,self.redirect,self.target,self.method,self.query).run()
 			sys.exit()
 		# sql attack
 		if self.sql==True:
-			if not self.method:sys.exit(self.printf.erro('Method not exisits!'))
-			if not self.query:sys.exit(self.printf.erro('Not found query'))
+			if not self.method:sys.exit(self.printf.erro('Method does not exist!'))
+			if not self.query:sys.exit(self.printf.erro('Query not found'))
 			wpsql.wpsql(self.agent,self.proxy,self.redirect,self.target,self.method,self.query).run()
 			sys.exit()
 		# lfi attack
 		if self.lfi==True:
-			if not self.method:sys.exit(self.printf.erro('Method not exisits!'))
-			if not self.query:sys.exit(self.printf.erro('Not found query'))
+			if not self.method:sys.exit(self.printf.erro('Method does not exist!'))
+			if not self.query:sys.exit(self.printf.erro('Query not found'))
 			wplfi.wplfi(self.agent,self.proxy,self.redirect,self.target,self.method,self.query).run()
 			sys.exit()
 		# attack bruteforce
 		if self.brute==True:
-			if not self.wordlist:sys.exit(self.printf.erro('Not found wordlist!'))
+			if not self.wordlist:sys.exit(self.printf.erro('Wordlist not found!'))
 			wpxmlrpc.wpxmlrpc(self.agent,self.proxy,self.redirect,self.target,self.cookie,self.wordlist,self.user).run()
 			sys.exit()
 		# discovery

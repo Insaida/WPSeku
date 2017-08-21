@@ -48,8 +48,8 @@ class wpxss:
 					url = self.check.checkurl(self.url,"")
 					resp = self.req.send(url,self.method,enparam)
 					if re.search(x[0],resp.read()) and resp.getcode() == 200:
-						self.printf.erro("[%s][%s][vuln] %s"%(resp.getcode(),self.method,resp.geturl()))
+						self.printf.erro("[%s][%s][vulnerable] %s"%(resp.getcode(),self.method,resp.geturl()))
 					else:
-						self.printf.plus("[%s][%s][not vuln] %s"%(resp.getcode(),self.method,resp.geturl()))
+						self.printf.plus("[%s][%s][not vulnerable] %s"%(resp.getcode(),self.method,resp.geturl()))
 		except Exception as error:
 			pass

@@ -36,8 +36,8 @@ class wploginprotection:
 			url = self.check.checkurl(self.url,'wp-login.php')
 			resp = self.req.send(url)
 			if resp.getcode()== 200:
-				self.printf.plus('wp-login not detect protection')
+				self.printf.plus('wp-login protection not detected')
 			elif resp.getcode() == 404:
-				self.printf.erro('wp-login detect protection')
+				self.printf.erro('wp-login protection detected')
 		except Exception as error:
 			pass

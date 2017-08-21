@@ -41,7 +41,7 @@ class wpplugin:
 		self.wpreadme = wpreadme.wpreadme(agent=agent,proxy=proxy,redirect=redirect,url=url)
 
 	def run(self):
-		self.printf.test('Enumeration plugins...')
+		self.printf.test('Enumerating plugins...')
 		try:
 			url = self.check.checkurl(self.url,'')
 			resp = self.req.send(url)
@@ -61,7 +61,7 @@ class wpplugin:
 					wpvuln().run(new[c])
 				print ""
 			else:
-				self.printf.ipri('Not found plugins')
+				self.printf.ipri('Can not find plugins')
 		except Exception as error:
 			pass
 
@@ -96,8 +96,8 @@ class wpvuln:
 								self.printf.ipri('Reference: %s'%(j[plugin]["vulnerabilities"][x]["references"]["url"][z]),color="g")
 						self.printf.ipri('Fixed in: %s'%(j[plugin]["vulnerabilities"][x]["fixed_in"]),color="g")
 				else:
-					self.printf.ipri('Not found vulnerabilities',color="g")
+					self.printf.ipri('Can not find vulnerabilities',color="g")
 			else:
-				self.printf.ipri('Not found vulnerabilities',color="g")
+				self.printf.ipri('Can not find vulnerabilities',color="g")
 		except Exception as error:
-			self.printf.ipri('Not found vulnerabilities',color="g")
+			self.printf.ipri('Can not find vulnerabilities',color="g")

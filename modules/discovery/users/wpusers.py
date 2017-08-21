@@ -22,6 +22,7 @@
 from lib import wphttp
 from lib import wpprint
 import re
+import requests
 
 class wpusers:
 	check = wphttp.check()
@@ -31,7 +32,7 @@ class wpusers:
 		self.req = wphttp.wphttp(agent=agent,proxy=proxy,redirect=redirect)
 
 	def run(self):
-		self.printf.test("Enumeration usernames...")
+		self.printf.test("Enumerating usernames...")
 		l = []
 		for x in range(0,15):
 			try:
@@ -57,6 +58,8 @@ class wpusers:
 						self.printf.ipri(" ID: %s  |  Login: %s"%(a,login_new[a][0]),color="g")
 				print ""
 			if login_new == []:
-				self.printf.ipri("Not found usernames",color="r")
+				self.printf.ipri("Can't find usernames",color="r")
 		except Exception as error:
-			self.printf.ipri("Not found usernames",color="r")
+			self.printf.ipri("Can't find usernames",color="r")
+
+

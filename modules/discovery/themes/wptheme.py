@@ -45,7 +45,7 @@ class wptheme:
 		self.wpst = wpstyle.wpstyle(agent=agent,proxy=proxy,redirect=redirect,url=url)
 
 	def run(self):
-		self.printf.test('Enumeration themes...')
+		self.printf.test('Enumerating themes...')
 		try:
 			url = self.check.checkurl(self.url,'')
 			resp = self.req.send(url)
@@ -68,7 +68,7 @@ class wptheme:
 					wpvuln().run(new[c])
 				print ""
 			else:
-				self.printf.ipri('Not found themes',color="g")
+				self.printf.ipri('Can not find themes',color="g")
 		except Exception as error:
 			pass
 	
@@ -102,8 +102,8 @@ class wpvuln:
 								self.printf.ipri('Reference: %s'%(j[theme]["vulnerabilities"][x]["references"]["url"][z]),color="g")
 						self.printf.ipri('Fixed in: %s'%(j[theme]["vulnerabilities"][x]["fixed_in"]),color="g")
 				else:
-					self.printf.ipri('Not found vulnerabilities',color="g")
+					self.printf.ipri('can not find vulnerabilities',color="g")
 			else:
-				self.printf.ipri('Not found vulnerabilities',color="g")
+				self.printf.ipri('Can not find vulnerabilities',color="g")
 		except Exception as error:
-			self.printf.ipri('Not found vulnerabilities',color="g")
+			self.printf.ipri('Can not find vulnerabilities',color="g")

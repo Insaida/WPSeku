@@ -42,8 +42,8 @@ class wplisting:
                     if re.search('Index of',html):
                         self.printf.plus('dir %s listing enabled under: %s'%(i,url))
                     else:
-                        self.printf.erro('dir %s not listing enabled'%(i))
+                        self.printf.erro('dir %s listing not enabled'%(i))
                 else:
-                    self.printf.erro('dir %s not listing enabled'%(i))
+                    self.printf.erro('dir %s listing not enabled'%(i))
             except Exception as error:
                 pass
